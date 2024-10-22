@@ -1,0 +1,102 @@
+---
+title: "Projects"
+---
+
+## dnorm
+
+#dbinom() Function
+#This function is used to find probability at a particular value
+#for a data that follows binomial distribution i.e. it finds:
+dbinom(3, size = 13, prob = 1 / 6)
+probabilities <- dbinom(x = c(0:10), size = 13, prob = 1 / 6)
+data.frame(x, probabilities)
+plot(0:10, probabilities, type = "l")
+#####################################
+#pbinom(k,n,p) Function
+#where n is total number of trials, p is probability of success,
+#k is the value at which the probability has to be found outThe
+#function pbinom() is used to find the cumulative probability of a data
+#following binomial distribution till a given value ie it finds
+
+pbinom(3, size = 13, prob = 1 / 6)
+plot(0:10, pbinom(0:10, size = 10, prob = 1 / 6), type = "l")
+#####################
+#qbinom(p,n,p) Function
+#This function is used to find the nth quantile, that is if P(x <= k)
+#is given, it finds k.
+qbinom(0.8419226, size = 13, prob = 1 / 6)
+x <- seq(0, 1, by = 0.1)
+y <- qbinom(x, size = 13, prob = 1 / 6)
+plot(x, y, type = 'l')
+###################################
+#rbinom(n,N,P) Function
+#This function generates n random variables of a particular
+#probability.
+x <- rbinom(8, size = 13, prob = 1 / 6);x
+hist(x)
+############
+# Using binom.test() method
+
+gfg <- binom.test(50, 100)
+
+print(gfg)
+# Using binom.test() method
+
+gfg <- binom.test(1, 36, 0.6)
+
+print(gfg)
+#############
+test_results <- binom.test(x = 65,
+                           n = 100,
+                           p =.5,
+                           alternative='greater')
+
+
+test_results
+# values can embedded using `r test_results$p.value`
+test_results$p.value
+################
+coin_flips <- data.frame( number_of_heads = 0:10,
+                          probability = dbinom(x=0:10,size=10,prob= .5),
+                          cumulative = pbinom(0:10, size = 10, prob = .5),
+                          rev_cumulative = pbinom(-1:9, 10, .5, lower.tail=FALSE))
+knitr::kable(coin_flips)
+########
+# 1 trial
+task_designs <- data.frame( number_of_heads = 0:1,
+                            probability = dbinom(x=0:1,size=1,prob= .5),
+                            cumulative = pbinom(0:1, size = 1, prob = .5),
+                            rev_cumulative = pbinom(-1:0, 1, .5, lower.tail=FALSE))
+knitr::kable(task_designs)
+
+## qnorm
+task_designs <- data.frame( number_of_heads = 0:2,
+                            probability = dbinom(x=0:2,size=2,prob= .5),
+                            cumulative = pbinom(0:2, size = 2, prob = .5),
+                            rev_cumulative = pbinom(-1:1, 2, .5, lower.tail=FALSE))
+knitr::kable(task_designs)
+
+## pnorm
+task_designs <- data.frame( number_of_heads = 0:3,
+                            probability = dbinom(x=0:3,size=3,prob= .5),
+                            cumulative = pbinom(0:3, size = 3, prob = .5),
+                            rev_cumulative = pbinom(-1:2, 2, .5, lower.tail=FALSE))
+knitr::kable(task_designs)
+binom.test(51,100,.5,alternative="greater")
+# ETC
+binom.test(51,100,.5,alternative="greater")
+binom.test(510,1000,.5,alternative="greater")
+binom.test(5100,10000,.5,alternative="greater")
+binom.test(51000,100000,.5,alternative="greater")
+
+########clear console############################
+
+# Clear environment
+rm(list = ls()
+   # Clear console
+   cat("\014")# ctrl+L
+   #Clear plot
+   dev.off()    # Close plots ###############
+   
+   ######## Clear mind :) #########################
+   

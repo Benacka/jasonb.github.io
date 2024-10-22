@@ -1,0 +1,24 @@
+---
+title: "Jason Benacka"
+about:
+  id: me
+  template: trestles
+  image: img/funnyduck.png
+  image-shape: round
+  image-width: 15em
+---
+
+
+:::{#me}
+
+## Project 1
+
+## Project 2
+
+## Project 3
+
+## Project 4
+
+:::
+
+Thanks for checking out my web site!

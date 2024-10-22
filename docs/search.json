@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "#dbinom() Function #This function is used to find probability at a particular value #for a data that follows binomial distribution i.e. it finds: dbinom(3, size = 13, prob = 1 / 6) probabilities &lt;- dbinom(x = c(0:10), size = 13, prob = 1 / 6) data.frame(x, probabilities) plot(0:10, probabilities, type = “l”) ##################################### #pbinom(k,n,p) Function #where n is total number of trials, p is probability of success, #k is the value at which the probability has to be found outThe #function pbinom() is used to find the cumulative probability of a data #following binomial distribution till a given value ie it finds\npbinom(3, size = 13, prob = 1 / 6) plot(0:10, pbinom(0:10, size = 10, prob = 1 / 6), type = “l”) ##################### #qbinom(p,n,p) Function #This function is used to find the nth quantile, that is if P(x &lt;= k) #is given, it finds k. qbinom(0.8419226, size = 13, prob = 1 / 6) x &lt;- seq(0, 1, by = 0.1) y &lt;- qbinom(x, size = 13, prob = 1 / 6) plot(x, y, type = ‘l’) ################################### #rbinom(n,N,P) Function #This function generates n random variables of a particular #probability. x &lt;- rbinom(8, size = 13, prob = 1 / 6);x hist(x) ############ # Using binom.test() method\ngfg &lt;- binom.test(50, 100)\nprint(gfg) # Using binom.test() method\ngfg &lt;- binom.test(1, 36, 0.6)\nprint(gfg) ############# test_results &lt;- binom.test(x = 65, n = 100, p =.5, alternative=‘greater’)\ntest_results # values can embedded using r test_results$p.value test_results$p.value ################ coin_flips &lt;- data.frame( number_of_heads = 0:10, probability = dbinom(x=0:10,size=10,prob= .5), cumulative = pbinom(0:10, size = 10, prob = .5), rev_cumulative = pbinom(-1:9, 10, .5, lower.tail=FALSE)) knitr::kable(coin_flips) ######## # 1 trial task_designs &lt;- data.frame( number_of_heads = 0:1, probability = dbinom(x=0:1,size=1,prob= .5), cumulative = pbinom(0:1, size = 1, prob = .5), rev_cumulative = pbinom(-1:0, 1, .5, lower.tail=FALSE)) knitr::kable(task_designs)"
+  },
+  {
+    "objectID": "projects.html#dnorm",
+    "href": "projects.html#dnorm",
+    "title": "Projects",
+    "section": "",
+    "text": "#dbinom() Function #This function is used to find probability at a particular value #for a data that follows binomial distribution i.e. it finds: dbinom(3, size = 13, prob = 1 / 6) probabilities &lt;- dbinom(x = c(0:10), size = 13, prob = 1 / 6) data.frame(x, probabilities) plot(0:10, probabilities, type = “l”) ##################################### #pbinom(k,n,p) Function #where n is total number of trials, p is probability of success, #k is the value at which the probability has to be found outThe #function pbinom() is used to find the cumulative probability of a data #following binomial distribution till a given value ie it finds\npbinom(3, size = 13, prob = 1 / 6) plot(0:10, pbinom(0:10, size = 10, prob = 1 / 6), type = “l”) ##################### #qbinom(p,n,p) Function #This function is used to find the nth quantile, that is if P(x &lt;= k) #is given, it finds k. qbinom(0.8419226, size = 13, prob = 1 / 6) x &lt;- seq(0, 1, by = 0.1) y &lt;- qbinom(x, size = 13, prob = 1 / 6) plot(x, y, type = ‘l’) ################################### #rbinom(n,N,P) Function #This function generates n random variables of a particular #probability. x &lt;- rbinom(8, size = 13, prob = 1 / 6);x hist(x) ############ # Using binom.test() method\ngfg &lt;- binom.test(50, 100)\nprint(gfg) # Using binom.test() method\ngfg &lt;- binom.test(1, 36, 0.6)\nprint(gfg) ############# test_results &lt;- binom.test(x = 65, n = 100, p =.5, alternative=‘greater’)\ntest_results # values can embedded using r test_results$p.value test_results$p.value ################ coin_flips &lt;- data.frame( number_of_heads = 0:10, probability = dbinom(x=0:10,size=10,prob= .5), cumulative = pbinom(0:10, size = 10, prob = .5), rev_cumulative = pbinom(-1:9, 10, .5, lower.tail=FALSE)) knitr::kable(coin_flips) ######## # 1 trial task_designs &lt;- data.frame( number_of_heads = 0:1, probability = dbinom(x=0:1,size=1,prob= .5), cumulative = pbinom(0:1, size = 1, prob = .5), rev_cumulative = pbinom(-1:0, 1, .5, lower.tail=FALSE)) knitr::kable(task_designs)"
+  },
+  {
+    "objectID": "projects.html#qnorm",
+    "href": "projects.html#qnorm",
+    "title": "Projects",
+    "section": "qnorm",
+    "text": "qnorm\ntask_designs &lt;- data.frame( number_of_heads = 0:2, probability = dbinom(x=0:2,size=2,prob= .5), cumulative = pbinom(0:2, size = 2, prob = .5), rev_cumulative = pbinom(-1:1, 2, .5, lower.tail=FALSE)) knitr::kable(task_designs)"
+  },
+  {
+    "objectID": "projects.html#pnorm",
+    "href": "projects.html#pnorm",
+    "title": "Projects",
+    "section": "pnorm",
+    "text": "pnorm\ntask_designs &lt;- data.frame( number_of_heads = 0:3, probability = dbinom(x=0:3,size=3,prob= .5), cumulative = pbinom(0:3, size = 3, prob = .5), rev_cumulative = pbinom(-1:2, 2, .5, lower.tail=FALSE)) knitr::kable(task_designs) binom.test(51,100,.5,alternative=“greater”) # ETC binom.test(51,100,.5,alternative=“greater”) binom.test(510,1000,.5,alternative=“greater”) binom.test(5100,10000,.5,alternative=“greater”) binom.test(51000,100000,.5,alternative=“greater”)\n########clear console############################"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Jason Benacka",
+    "section": "",
+    "text": "Thanks for checking out my web site!"
+  },
+  {
+    "objectID": "hobbies.html#hobby-2",
+    "href": "hobbies.html#hobby-2",
+    "title": "Hobbies",
+    "section": "Hobby 2",
+    "text": "Hobby 2"
+  },
+  {
+    "objectID": "hobbies.html#hobby-3",
+    "href": "hobbies.html#hobby-3",
+    "title": "Hobbies",
+    "section": "Hobby 3",
+    "text": "Hobby 3"
+  },
+  {
+    "objectID": "lecture.html#project-2",
+    "href": "lecture.html#project-2",
+    "title": "Lecture",
+    "section": "Project 2",
+    "text": "Project 2"
+  },
+  {
+    "objectID": "lecture.html#project-3",
+    "href": "lecture.html#project-3",
+    "title": "Lecture",
+    "section": "Project 3",
+    "text": "Project 3"
+  }
+]
